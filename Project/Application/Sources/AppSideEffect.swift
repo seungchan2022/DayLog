@@ -7,10 +7,12 @@ import Platform
 
 // MARK: - AppSideEffect
 
-struct AppSideEffect: DependencyType, DashboardSideEffect { }
+struct AppSideEffect: DependencyType, DashboardSideEffect {
+  let sampleUseCase: SampleUseCase
+}
 
 extension AppSideEffect {
   static func generate() -> AppSideEffect {
-    .init()
+    .init(sampleUseCase: SampleUseCasePlatform())
   }
 }

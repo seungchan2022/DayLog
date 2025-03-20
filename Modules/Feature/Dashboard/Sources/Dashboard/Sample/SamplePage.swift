@@ -13,10 +13,15 @@ extension SamplePage: View {
   var body: some View {
     VStack {
       Spacer()
+      Text(store.text)
+
       Button(action: { store.send(.onTapHome) }) {
         Text("홈으로 이동")
       }
       Spacer()
+    }
+    .onAppear {
+      store.send(.getSample)
     }
   }
 }
