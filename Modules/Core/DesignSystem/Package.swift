@@ -14,10 +14,14 @@ let package = Package(
       targets: ["DesignSystem"]),
   ],
   dependencies: [
+    .package(
+      url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
+      from: "2.2.3"),
   ],
   targets: [
     .target(
       name: "DesignSystem",
       dependencies: [
+        "SDWebImageSwiftUI",
       ]),
   ])
