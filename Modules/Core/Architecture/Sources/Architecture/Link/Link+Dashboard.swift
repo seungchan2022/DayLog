@@ -5,3 +5,12 @@ import Foundation
 extension Link {
   public enum Dashboard { }
 }
+
+// MARK: - Link.Dashboard.Path
+
+extension Link.Dashboard {
+  public enum Path: String, Equatable {
+    case sample
+    case home
+  }
+}

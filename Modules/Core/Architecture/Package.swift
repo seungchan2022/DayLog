@@ -21,13 +21,11 @@ let package = Package(
     .package(
       url: "https://github.com/apple/swift-log.git",
       .upToNextMajor(from: "1.5.3")),
-    .package(path: "../../Core/Functor"),
   ],
   targets: [
     .target(
       name: "Architecture",
       dependencies: [
-        "Functor",
         .product(name: "LinkNavigator", package: "LinkNavigator"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         .product(name: "Logging", package: "swift-log"),

@@ -7,7 +7,7 @@ import Platform
 
 // MARK: - AppSideEffect
 
-struct AppSideEffect: DependencyType { }
+struct AppSideEffect: DependencyType, DashboardSideEffect { }
 
 extension AppSideEffect {
   static func generate() -> AppSideEffect {

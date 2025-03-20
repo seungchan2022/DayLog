@@ -1,15 +1,17 @@
 import Architecture
 import Foundation
-import LinkNavigator
+@preconcurrency import LinkNavigator
 import Platform
 
+@MainActor
 final class AppContainer {
 
   // MARK: Lifecycle
 
   init(dependency: AppSideEffect = AppSideEffect.generate()) {
+    let builder = AppRouteBuilderGroup<SingleLinkNavigator>()
     linkNavigator = .init(
-      routeBuilderItemList: [],
+      routeBuilderItemList: builder.applicationBuilders(),
       dependency: dependency)
   }
 
