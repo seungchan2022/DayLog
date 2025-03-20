@@ -42,7 +42,7 @@ struct SampleReducer {
         return .none
 
       case .throwError(let error):
-        print(error.displayMessage)
+        sideEffect.useCaseGroup.toastViewModel.send(errorMessage: error.displayMessage)
         return .none
       }
     }
